@@ -5,9 +5,11 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class User extends Authenticatable
+class Doctor extends Authenticatable
 {
     use Notifiable;
+
+    protected $guard = 'doctor';
 
     /**
      * The attributes that are mass assignable.
@@ -24,6 +26,6 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token','phone','profile_image','address_id'
+        'password', 'remember_token',
     ];
 }
